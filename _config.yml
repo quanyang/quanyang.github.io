@@ -1,11 +1,11 @@
 # Site wide configuration
 
-title: 123
+title: 
 locale: en_US
 description: Describe your website here.
 logo: https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xft1/t51.2885-19/s150x150/929302_221689604831132_936044706_a.jpg
 search: true
-url: http://localhost:4000
+url: http://quanyang.github.io
 
 # Jekyll configuration
 
