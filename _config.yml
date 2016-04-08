@@ -1,14 +1,71 @@
-# Site settings
-title: Your awesome title
-email: quanyang@live.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://quanyang.github.io" # the base hostname & protocol for your site
-twitter_username: quanyang
-github_username:  quanyang
+# Site wide configuration
 
-# Build settings
-markdown: kramdown
+title: 123
+locale: en_US
+description: Describe your website here.
+logo: https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xft1/t51.2885-19/s150x150/929302_221689604831132_936044706_a.jpg
+search: true
+url: http://localhost:4000
+
+# Jekyll configuration
+
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+  - jekyll-gist
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..2
+  enable_coderay: false
+
+mathjax: true
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+
+
+# Octopress
+
+# Default extensions
+post_ext: md
+page_ext: md
+
+# Found in _templates/
+post_layout: post
+page_layout: page
+
+# Format titles with titlecase?
+titlecase: true
+
+
+# Site owner
+owner:
+  name: Yeo Quan Yang
+  avatar: bio-photo.jpg
+  email: quanyang@live.com
+  disqus-shortname:
+  twitter: quanyang
+  facebook: quanyang
+  github: quanyang
+  stackexchange: #http://stackoverflow.com/users/123456/username
+  linkedin: quanyang
+  instagram: quanyang
+  flickr: #username
+  tumblr: #username
+  pinterest: #username
+  weibo: #userid
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
