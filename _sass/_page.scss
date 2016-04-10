@@ -92,9 +92,15 @@ span + .entry-title {
 
 /* page/post wrapper */
 
+.entry,.hentry {
+    .entry-wrapper {
+        box-shadow: 0 2px 1px rgba(0,0,0,0.1);
+    }
+}
+
 .entry-wrapper {
 	@include outer-container;
-    background:rgba(255,255,255,0.7);
+    background:rgba(255,255,255,1);
 	margin-top: 0;
 	margin-bottom: 3em;
     padding: $gutter;
