@@ -1,9 +1,13 @@
 ---
 layout: page
-title: About
+title: About me
 excerpt: ""
-modified: 2014-08-08T19:44:38.564948-04:00
 icon: yes
 ---
 
-Nothing to see here.
+#####Final year Computer Science student at the National University of Singapore.
+
+Crazy about **Security**, loves breaking and creating websites. Loves to play capture-the-flags over sleeping/studying. 
+
+[resume (pdf)](/resources/Resume-Yeo Quan Yang.pdf)  
+[email](mailto:quanyang@live.com)

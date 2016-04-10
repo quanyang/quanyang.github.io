@@ -9,7 +9,7 @@
   margin: 0em auto 0em;
   text-align: center;
   font-family: $alt-font;
-  @include font-size(14);
+  @include font-size(14,no);
   font-style: italic;
   color: lighten($text-color,20);
   a {

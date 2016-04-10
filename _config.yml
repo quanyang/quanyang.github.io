@@ -1,11 +1,12 @@
 # Site wide configuration
 
-title: 
+title: Quan Yang
 locale: en_US
-description: Describe your website here.
+description: Quan Yang's blog.
 logo: https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xft1/t51.2885-19/s150x150/929302_221689604831132_936044706_a.jpg
 search: true
-url: http://quanyang.github.io
+url: http://127.0.0.1:4000
+#url: http://quanyang.github.io
 
 # Jekyll configuration
 
@@ -49,15 +50,15 @@ titlecase: true
 # Site owner
 owner:
   name: Yeo Quan Yang
-  avatar: bio-photo.jpg
+  avatar: qy.jpg
   email: quanyang@live.com
   disqus-shortname:
   twitter: quanyang
-  facebook: quanyang
+  facebook: 
   github: quanyang
   stackexchange: #http://stackoverflow.com/users/123456/username
   linkedin: quanyang
-  instagram: quanyang
+  instagram: 
   flickr: #username
   tumblr: #username
   pinterest: #username

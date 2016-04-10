@@ -83,10 +83,10 @@ span + .entry-title {
 		text-decoration: underline;
 	}
 	@include media($medium) {
-		@include font-size(52,yes,54);
+		@include font-size(36,yes,36);
 	}
 	@include media($large) {
-		@include font-size(68,yes,72);
+		@include font-size(36,yes,36);
 	}
 }
 
@@ -94,8 +94,10 @@ span + .entry-title {
 
 .entry-wrapper {
 	@include outer-container;
+    background:rgba(255,255,255,0.7);
 	margin-top: 0;
 	margin-bottom: 3em;
+    padding: $gutter;
 	padding-right: $gutter;
 	padding-left: $gutter;
 }
