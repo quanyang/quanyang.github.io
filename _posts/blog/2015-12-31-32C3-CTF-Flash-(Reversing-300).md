@@ -31,7 +31,7 @@ We're given a gzip compressed file, which includes a sample firmware, the public
 
 Running file on the firmware.bin shows that it is an archive. The signature file contained in it seems to be a digital signature that is used to ensure the authenticity of the firmware.
 
-{% highlight bash linenos %}
+{% highlight sh linenos %}
 $ file firmware.bin
 firmware.bin: POSIX tar archive (GNU)
 $ tar vxf firmware.bin

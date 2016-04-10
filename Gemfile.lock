@@ -65,6 +65,7 @@ DEPENDENCIES
   jekyll-gist
   jekyll-sitemap
   octopress
+  rouge
 
 BUNDLED WITH
    1.11.2
