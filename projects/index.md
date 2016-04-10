@@ -14,7 +14,7 @@ Griddit.io is a platform that allows users to create shareable grids containing 
 
 --------
 
-####MahjongLeh | iOS - [iTunes App Store](https://itunes.apple.com/sg/app/mahjongleh/id975091034)
+#### MahjongLeh | iOS - [iTunes App Store](https://itunes.apple.com/sg/app/mahjongleh/id975091034)
 Multiplayer Singaporean styled Mahjong. A turn-based tabletop tile game modified with Singaporean rules. 4.5 stars rating on the App Store.  
 
 ![](http://a3.mzstatic.com/us/r30/Purple5/v4/cd/9b/ab/cd9babb3-2061-3b63-d3f7-5ae449ef70b5/screen640x640.jpeg){: height="auto" width="400px"}
