@@ -5,3 +5,4 @@ gem "jekyll-sitemap"
 gem "jekyll-gist"
 gem "octopress"
 gem 'rouge'
+gem 'pygments.rb'
