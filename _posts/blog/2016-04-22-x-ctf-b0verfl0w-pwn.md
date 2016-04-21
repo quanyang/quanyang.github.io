@@ -1,6 +1,6 @@
 ---
 layout: post
-title: X-CTF - b0verfl0w (Pwn)
+title: X-CTF Quals 2016 - b0verfl0w (Pwn)
 modified:
 categories: blog
 excerpt: "Write up for b0verfl0w an exploitation challenge I wrote for X-CTF quals 2016."
