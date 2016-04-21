@@ -8,6 +8,8 @@ tags: []
 image:
   feature:
 date: 2016-04-22T01:03:15+08:00
+share: true
+comments: true
 ---
 
 X-CTF is a capture the flag competition in Singapore organized by NUS Greyhats. The online qualifiers took place over the weekend of 9 - 10 April 2016. Halfway through the competition, we realize that the challenges were solved pretty quickly by the participants, and thus I wrote some new challenges. The following two challenges were by me.
