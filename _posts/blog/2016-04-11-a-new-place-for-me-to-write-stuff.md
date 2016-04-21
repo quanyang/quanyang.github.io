@@ -8,6 +8,7 @@ tags: []
 image:
   feature:
 date: 2016-04-11T04:45:25+08:00
+comments: true
 ---
 
 I've had quite a bit of technical content that I wanted to share with the world, yet lacked a medium to do so. So, I took some time to start a personal blog where I can share some knowledge hopefully. :)
