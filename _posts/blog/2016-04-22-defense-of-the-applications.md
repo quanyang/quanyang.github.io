@@ -59,10 +59,10 @@ This is the same application that was vulnerable to XSS earlier and this time, i
 ![](/resources/images/dota/SQL3.png)
 ![](/resources/images/dota/SQL3.5.png)
 
-For the third application, initially this same endpoint was vulnerable to directory traversal that allows me to obtain any arbitrary file on the server. However, that has now been patched and I instead found that this other parameter is vulnerable to SQL injection. The way I verify this is interesting; someone with SQL experience will know that `;--` (I added the semi-colon to make it more obvious) is used for commenting in SQL. However, `;-- ` only works when there's a space or line-break after. Similarly, from the two image, you can see that the page loaded fine (though invalid file) when the space (%20) was added. The two images looks like two different pages but the difference is due to a redirection done by the website.
+For the third application, initially this same endpoint was vulnerable to directory traversal that allows me to obtain any arbitrary file on the server. However, that has now been patched and I instead found that this other parameter is vulnerable to SQL injection. The way I verify this is interesting. An experienced MySQL developer would know that `;--` (I added the semi-colon to make it more obvious) is used for commenting in SQL. However, `;-- ` only works when there's a space or line-break after. From the two image, you can see that the page loaded fine (though invalid file) when the space (%20) was added. The two images looks like two different pages but the difference is due to a redirection done by the website.
 
 ## Take-away from SQL injection
-1. Refer to XSS lesson #1. Sometimes using an ORM (e.g. Eloquent on Laravel) would reduce the need to write queries and as a result, less vulnerabilities created.
+1. Refer to XSS lesson #1. Sometimes using an ORM (e.g. Eloquent on Laravel) would reduce the need to write queries and as a result, less vulnerabilities introduced.
 2. Please sanitize **ALL** input before using them in a database query.
 3. If not lazy, use prepared statements for all queries. **HIGHLY RECOMMENDED**
 4. Never store user password in plaintext, always use hash+salt. For PHP you can use the `hash_password` native function to handle the hashing and salting for you. 
@@ -101,10 +101,9 @@ This would be useful for an attacker to learn more about your website. Some info
 
 Although it is commonly said not to secure a system through obscurity, what it really means is that you should not rely on obscurity as the only layer of defense. A layered defense is always better when implemented and designed properly. 
 
-To hide the directory listing, one simple way is to create an `index.html` page in every directory. However, this isn't very elegant, and might irk some people. To solve it with a more elegant approach, you can modify the webserver configuration.
+To hide the directory listing, one simple way is to create an `index.html` page in every directory. However, this isn't very elegant and might irk some people. To solve it more elegantly, you could modify the webserver configuration.
 
-For Apache:
-Instead of the following:
+For Apache, instead of the following:
 {% highlight html linenos%}
 <Directory /var/www/>
         Options Indexes FollowSymLinks
@@ -121,7 +120,7 @@ Remove the Indexes option to disable the directory listings.
 </Directory>
 {% endhighlight %}
 
-Another way is to enter this in an `.htaccess` file inside the directory you want to disable listing for:
+Another way is to insert the following into an `.htaccess` file inside the directory you would like to disable listing for:
 
 ```
 Options -Indexes  
@@ -195,7 +194,7 @@ function getData(sel){
 </html>
 {% endhighlight %}
 
-What they should have done was to make a function call to `die()` after the redirection, or to encapsulate the entire else logic into an else conditional. 
+What they should have done was to make a function call to `die()` after the redirection or to encapsulate the entire else logic into an else conditional. 
 
 {% highlight php linenos %}
 <?php
@@ -223,11 +222,11 @@ error_reporting(E_ALL);
 
 # Destroying the Ancients
 
-This portion of the post will be about the steps I took to obtain credentials to the server, database and back-end codes of one of the application. I'll be focusing on the mistakes made by the developers along the way as I document the steps.
+This portion of the post will be about the steps I took to obtain credentials to the server, database and back-end sourcecodes of one of the application. I'll be focusing on the mistakes made by the developers along the way as I describe the steps.
 
 I was auditing this same application for the second time, and as the application has very little features, the attack surface on the website itself was limited. As such, this was the only application in which I delved into attacking the infrastructure as well.
 
-The first thing to do was to gather more information on the servers. Find out what ports are open and what services are running. Using Nmap, I could do this easily.
+The first thing to do was to gather more information on the servers. Using Nmap, I could find out what ports are open and what services are running easily.
 
 {% highlight bash linenos %}
 → nmap -A **redacted**
@@ -278,7 +277,7 @@ loginFBCallback.php
 **truncated**
 {% endhighlight %}
 
-Doing so allows you to obtain the entire content of the Git repository and furthermore, in this case it was a private repository.
+Doing so allows you to obtain the entire content of the Git repository.
 
 What's next? Do a search for passwords and token! Obviously, the first place is to look at the `db` folder.
 {% highlight php linenos %}
@@ -300,7 +299,7 @@ if ($db->connect_errno) // are we connected properly?
 ?>
 {% endhighlight %}
 
-Tada! Now we have the database password. What do we look for next? Secret tokens for FaceBook!
+Tada! Now we have the database password. What do we look for next? Secret tokens for Facebook!
 {% highlight php linenos %}
 → cat loginFB.php
 <?php
@@ -322,7 +321,7 @@ Tada! Now we have the database password. What do we look for next? Secret tokens
     }
 ?>
 {% endhighlight %}
-With the app secret, I could make calls to FaceBook Graph API on behalf of the applications, potentially affecting privacy of its users.
+With the application secret, I could make calls to Facebook Graph API on behalf of the application, potentially violating privacy of its users.
 
 ## Take-away so far
 * Never place **SECRETS/PASSWORDS** in the backend code itself, place them into the environment variables or in a file in another directory which no one can view except root/web-user, and make sure the file is not in your **GIT** repository.
@@ -341,7 +340,7 @@ What did they do wrong? Many areas!
 
 1. Never enable passwords for SSH login (especially if you're hosting with [Digital Ocean](https://news.ycombinator.com/item?id=7354289)). Use SSH keys instead, enabling passwords is bad when you have short passwords. Read [here](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) for steps to enable SSH keys.  
 2. Never ever ever re-use passwords.  
-3. Never ever ever allow login to root accounts. Let users get elevated privileges through `sudo`, which an administrator control more discretely/fine-grained.  
+3. Never ever ever allow login to root accounts. Always let users get elevated privileges through `sudo`, which an administrator could control more discretely/fine-grained.  
 4. Update your server regularly!
 
 Like many has said, all you need is one weak spot in order for an adversary to enter your system. Even if I did not manage to enter the server through SSH, I could easily pivoted from the Database servers by spawning a reverse shell or planting a backdoor onto their server.
