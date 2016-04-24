@@ -15,7 +15,7 @@ Griddit.io is a platform that allows users to create shareable grids containing 
 --------
 
 #### MahjongLeh | iOS - [iTunes App Store](https://itunes.apple.com/sg/app/mahjongleh/id975091034)
-Multiplayer Singaporean styled Mahjong. A turn-based tabletop tile game modified with Singaporean rules. 4.5 stars rating on the App Store.  
+Multiplayer Singaporean styled Mahjong. A turn-based table-top tile game modified with Singaporean rules. 4.5 stars rating on the App Store.  
 
 ![](http://a3.mzstatic.com/us/r30/Purple5/v4/cd/9b/ab/cd9babb3-2061-3b63-d3f7-5ae449ef70b5/screen640x640.jpeg){: height="auto" width="400px"}
 
@@ -33,7 +33,7 @@ A python script that aggregates bidding data from CORS in order to determine the
 --------
 
 #### MIPS Simulator | [http://quanyang.github.io/MIPS/](http://quanyang.github.io/MIPS/)
-A MIPS simulator that is able to simulate a subset of MIPS instructions. Done purely using HTML and JavaScript, internals is implemented to be closely similar to actual CPU design. 
+A MIPS simulator/emulator that is able to simulate a subset of MIPS instructions. Done purely using HTML and JavaScript, internals is implemented to be closely similar to actual CPU design. 
 
 --------
 
@@ -44,7 +44,7 @@ Spotted is a platform that allows seamless and easy tip-off of stray animals spo
 
 #### ![](/resources/projects/waste.png){: width="32px"} WASTE | [https://github.com/quanyang/waste](github.com/quanyang/waste)
 Web Application Security Tester (WASTE) is a Google Chrome Extension that allows for easy and intuitive penetration testing of web applications. It uses a pre-defined set of payload to attempt at exploiting common web vulnerabilities. It also allows for manual payload insertion, and has the capability of inserting pre-defined values for certain input fields.  
-WASTE was created as part of a course's project.
+WASTE was created as part of a course requirement.
 
 --------
 
