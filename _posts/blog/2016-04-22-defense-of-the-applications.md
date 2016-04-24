@@ -12,7 +12,7 @@ comments: true
 date: 2016-04-22T16:41:52+08:00
 ---
 
-At NUS School of Computing, a project showcase is held nearing to the end of every semester. For this semester , I had no projects in the showcase, I was instead participating with a very different role. Nearing to STePS, Dr. Steven Halim invited me to help perform security audit on a dozen websites developed by his students in a module which would be showcased durign STePS.
+At NUS School of Computing, a project showcase is held nearing to the end of every semester. For this semester, I had no projects in the showcase, I was instead participating under a very different role. Closer to STePS, Dr. Steven Halim invited me to help perform security audit on a dozen websites developed by his students in a module which would be showcased durign STePS.
 
 I started manually auditing each and every web application, identifying vulnerabilities from simple ones like XSS to SQLi and for one of the application, I even managed to login into one of the server using information gathered. I was shocked by some of the coding practices as well as deployment techniques as many of the vulnerabiltiies were simple to fix and should have never been there. Therefore, I am writing this post to share the more commonly found vulnerabilties as well as severe ones that should never have existed with good deployment practices. 
 
