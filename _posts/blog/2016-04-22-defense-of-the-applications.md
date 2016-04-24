@@ -54,7 +54,7 @@ From the image, you can obviously see the SQL errors, as well as that the output
 
 ![](/resources/images/dota/SQL2.png){: width="350px"}![](/resources/images/dota/SQL2.5.png){: width="350px"}
 
-This is the same application that was vulnerable to XSS earlier and this time, it is also vulnerable to SQLi with many of the endpoints vulnerable. However, exploitation is a little bit more tricky due to the way queries were written. Likewise, this would not be possible with the use of a framework or prepared statements. 
+This is the same application that was vulnerable to XSS earlier and this time, it is also vulnerable to SQLi with many of the endpoints vulnerable. It is noticeable that the difference between the two reponse is in the number of quotes, which strongly indicates an SQL error that happens when an opening quote is not closed. However, exploitation for this particular application is a little bit more tricky due to the way queries were written. Likewise, SQL injection would not have been possible with the use of a framework or prepared statements. 
 
 ![](/resources/images/dota/SQL3.png)
 ![](/resources/images/dota/SQL3.5.png)
