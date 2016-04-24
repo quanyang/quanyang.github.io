@@ -9,6 +9,17 @@
 #main {
 	@include clearfix;
 }
+.hentry {
+    .entry-content {
+        img {
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            box-shadow: 0px 0px 10px #ddd;
+            margin:5px 0px;
+            display:block;
+        }
+    }
+}
 
 .entry,
 .hentry {
@@ -178,13 +189,6 @@ span + .entry-title {
 /* main content block */
 
 .entry-content {
-    img {
-        border: 1px solid #ddd;
-        border-radius: 7px;
-        box-shadow: 0px 0px 10px #ddd;
-        margin:5px 0px;
-        display:block;
-    }
 
 	@include span-columns(12);
 	p:first-child {

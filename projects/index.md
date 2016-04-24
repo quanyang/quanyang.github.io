@@ -32,7 +32,7 @@ A python script that aggregates bidding data from CORS in order to determine the
 
 --------
 
-#### MIPS Simulator | [http://quanyang.github.io/MIPS/](http://quanyang.github.io/MIPS/)
+#### MIPS Simulator | [http://quanyang.github.io/MIPS/](https://quanyang.github.io/MIPS/)
 A MIPS simulator/emulator that is able to simulate a subset of MIPS instructions. Done purely using HTML and JavaScript, internals is implemented to be closely similar to actual CPU design. 
 
 --------
@@ -42,7 +42,7 @@ Spotted is a platform that allows seamless and easy tip-off of stray animals spo
 
 --------
 
-#### ![](/resources/projects/waste.png){: width="32px"} WASTE | [https://github.com/quanyang/waste](github.com/quanyang/waste)
+#### ![](/resources/projects/waste.png){: width="32px"} WASTE | [https://github.com/quanyang/waste](https://github.com/quanyang/waste)
 Web Application Security Tester (WASTE) is a Google Chrome Extension that allows for easy and intuitive penetration testing of web applications. It uses a pre-defined set of payload to attempt at exploiting common web vulnerabilities. It also allows for manual payload insertion, and has the capability of inserting pre-defined values for certain input fields.  
 WASTE was created as part of a course requirement.
 
