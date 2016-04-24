@@ -50,7 +50,7 @@ SQL injection wasn't as easy to find as XSS, but was still there in some of the 
 
 ![](/resources/images/dota/SQL1.jpeg)
 
-From the image, you can obviously see the SQL errors, as well as that the output had the row which was union'ed together by the injected SQL query. Also, the SQL errors helps provide information on what type of OS (Some kind of Linux) as well as the filepath of the web service. For this case, I did not attempt to enumerate further and stopped here as it provided sufficient evidence that the vulnerability exists.
+From the image, you can obviously see the SQL errors as well as that the output includes the row which was union'ed together by the injected SQL query. Also, the SQL errors helps provide information on what type of OS (Some kind of Linux) as well as the filepath of the web service. For this case, I did not attempt to enumerate further and stopped here as it provided sufficient evidence that the vulnerability exists.
 
 ![](/resources/images/dota/SQL2.png){: width="350px"}![](/resources/images/dota/SQL2.5.png){: width="350px"}
 
