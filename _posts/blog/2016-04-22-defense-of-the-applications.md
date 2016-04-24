@@ -95,7 +95,7 @@ In another of the application, due to the vulnerability, I was able to plant an 
 Some other miscellaneous issues (not neccessarily vulnerabilities) that provided information for me to proceed further.
 
 ### Directory Enumeration  
-![](/resources/images/dota/de.png){: width="400px"}  
+![](/resources/images/dota/DE.png){: width="400px"}  
 This would be useful for an attacker to learn more about your website. Some information I can gather would be like what files you have, what backend language you are using, what kind of naming convention do you follow (which can be useful for other stuff), what other pages can I view, and in this case where's your admin page.
 
 Although it is commonly said not to secure a system through obscurity, what it means is that you should not rely on obscurity as the only layer of defense. A layered defense is always better when implemented and designed properly. 
