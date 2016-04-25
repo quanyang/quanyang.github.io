@@ -20,9 +20,9 @@ A mysterious signal… can you decode it? Running at morset.pwning.xxx:11821
 
 ---
 
-After connecting to the service, you'll receive some data that looks like morse code. If you enter some reply, you'll receive more morse code that looks like a respotonse. I also found out that if you send some morse code back, you'll get a different response from if you send non-morse code characters, which seem to signify that the response is important for getting the flag.
+After connecting to the service, you'll receive some data that looks like morse code. If you enter some reply, you'll receive more morse code that looks like a response. I also found out that if you send some morse code back, you'll get a different response from if you send non-morse code characters, which seem to signify that the response is important for getting the flag.
 
-Initially I couldn't determine the encoding of the messages, until bo787 mentioned that it could be base36 that we realize it is encoded with base36.
+Initially I couldn't determine the encoding of the messages, not until bo787 mentioned that it could be base36 that I realize it is base36-encoded.
 
 # Solution
 
