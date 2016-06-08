@@ -76,24 +76,24 @@ The following is an example using one of the 12 application:
 ![](/resources/images/dota/bl1.png)
 Here, we are looking at a post made by `quanyang` with the post id of 11.
 ![](/resources/images/dota/bl2.png)
-Here, we have a delete request JavaScript function that was found through auditing the JavaScript source code. Also, notice that I am now logged out of user `quanyang`. 
+Now, we have a delete request JavaScript function that I found through auditing the JavaScript source codes. Also notice that I am now logged out of user `quanyang`. We now call the function with the post id of 11.
 ![](/resources/images/dota/bl3.png)
-After invoking the deletion function with the post id of 11, we see that the post with id 11 no longer exists. Showing that the deletion works and that the endpoint does not have any access control or authentication in place.
+Here we see that the post with id 11 no longer exists. Showing that the function works, and that the endpoint does not have any access control or authentication in place.
 
-For most of the applications, the possible outcome of an exploitation of a business logic vulnerability would be to have content deleted/modified/viewed by unauthorized users. 
+For most of the applications, the possible outcome of an attack using the vulnerability would be that content gets deleted/modified/viewed by unauthorized users. 
 
 ![](/resources/images/dota/bl4.png)
 
-In this application, an attacker is able to obtain information on all the modules ever taken by a student simply by changing the matric number respectively. The web application did not put in place any access control or validation to ensure that the matric number belongs to the user currently logged in.
+In this application, we see that we are able to obtain all the modules taken by a user simply by changing the matric number accordingly. The web application did not place any access control or validation to ensure that the matric number belongs to the user currently logged in.
 
-In another application, due to a business logic vulnerability, I was able to plant an XSS payload onto the website without having to be authenticated as an admin or user (this was mentioned earlier).
+In another of the application, due to the vulnerability, I was able to plant an XSS payload onto the website without having to be authenticated as an admin or user (this was mentioned earlier).
 
 ## Take-away
 1. Never assume that no one would attempt to perform actions outside of what is allowed on the user interface/website.
 2. Security through Obscurity violates Kerckhoffs' Principle, never assume that no one would find the API endpoints you did not secure.
 
 # Miscellaneous stuff
-Some other miscellaneous issues (not neccessarily vulnerabilities) that provided information which was useful for me to proceed further.
+Some other miscellaneous issues (not neccessarily vulnerabilities) that provided information for me to proceed further.
 
 ### Directory Enumeration  
 ![](/resources/images/dota/DE.png){: width="400px"}  
