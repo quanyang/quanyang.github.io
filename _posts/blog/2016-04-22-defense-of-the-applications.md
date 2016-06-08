@@ -3,7 +3,7 @@ layout: post
 title: Defense of the Applications.
 modified:
 categories: blog
-excerpt: "What to look out for when building a web application"
+excerpt: "What to look out for when building a web application."
 tags: []
 image:
   feature:
