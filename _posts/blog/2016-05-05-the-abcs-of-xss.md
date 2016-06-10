@@ -270,7 +270,7 @@ What some site does is to host user content on a separate domain where no cookie
 However, without proper segmentation, a vulnerability on the sandbox domain could be used to pivot into the main domain as well. [Here's](https://whitton.io/articles/xss-on-facebook-via-png-content-types/) a bug found by a researcher and how he ultimately turned an XSS on a sandboxed domain into an XSS on *.facebook.com.
 
 ### SVG elements
-The **\<svg\>** element represents the root of a Scalable Vector Graphics (SVG) fragment and a svg file is usually transmitted with a mimtype of `image/svg+xml`. What this means is that for some websites, they may accept SVG files as image and as such, accepted in image upload fields. 
+The **\<svg\>** element represents the root of a Scalable Vector Graphics (SVG) fragment and a svg file is usually transmitted with a mimetype of `image/svg+xml`. What this means is that for some websites, they may accept SVG files as image and as such, accepted in image upload fields. 
 
 While embedding a malicious SVG image does not result in JavaScript execution, visiting an SVG file hosted on a site would most likely result in the malicious script executing under the context of the site. 
 

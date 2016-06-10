@@ -28,7 +28,7 @@ This application allows you to create posts, and image elements was allowed in t
 The mistake made by them here is to leave the output unsanitized and to provide for markdown formatting without fully understanding the potential for vulnerabilities.
 
 ![](/resources/images/dota/XSS2.png)
-The second application, similar to the one before, allows you to create posts, and likewise inputs and outputs were not sanitized. After they 'patched' the initial XSS vulnerability, I went back to take a second look and realized that all they did was to escape the input using JavaScript before sending the data over to the backend endpoint, which was useless as I could still do a HTTP POST direcly with the same payload. 
+The second application, similar to the one before, allows you to create posts, and likewise inputs and outputs were not sanitized. After they 'patched' the initial XSS vulnerability, I went back to take a second look and realized that all they did was to escape the input using JavaScript before sending the data over to the backend endpoint, which was useless as I could still do a HTTP POST directly with the same payload. 
 
 ![](/resources/images/dota/XSS2.5.png)
 
@@ -36,17 +36,17 @@ This same application had many other vulnerabilities (you will see later), and t
 
 ![](/resources/images/dota/XSS3.png)
 
-For the third application, it was a kind of different as I managed to inject the payload in using an unauthenticated endpoint that I found through auditing the JavaScript source code. The endpoint allows me to add new schedules to the calendar, and as the outputs were not sanitized, they became sinks for XSS. Likewise, this wouldn't have exist if they used a framework instead.
+For the third application, the XSS vulnerability was kind of different as I managed to inject the payload in using an unauthenticated endpoint that I found through auditing the JavaScript source code. The endpoint allows me to add new schedules to the calendar and as the outputs were not sanitized, they became sinks for XSS. Likewise, the vulnerability wouldn't have exist if they had used a framework instead.
 
 ## Take-away from XSS
-1. Use frameworks if possible, unless you're very familiar with the language and system. However, you still have to understand and utilize the framework properly in order to prevent simple vulnerabilities and not introduce more.
-2. Don't implement markdown without prior experience/knowledge.
-3. Sanitize **ALL** input/output regardless and if needed, use a white list instead of black list approach. 
-4. Never assume that an output will only come from an authorized user.
+1. Use frameworks if possible, unless you're very familiar with the language and system. However, even with a framework, you still have to understand and utilize the framework properly in order to prevent simple vulnerabilities and to not introduce more.
+2. Don't implement markdown formatting without prior experience/knowledge.
+3. Sanitize **ALL** input/output regardless, and if needed, use the white list instead of black list approach. 
+4. Never assume that an output would only come from an authorized user. Hidden endpoints could be discovered, and if not secured, would result in vulnerabilities.
 
 # SQL Injection
 
-SQL injection wasn't as easy to find as XSS, but was still there in some of the applications. Out of the 12, three of the sites was/is vulnerable to SQLi. I'd say SQLi is more severe than XSS as it allows an attacker to dump your entire database, and if suitable, even be able to spawn a shell and perform further exploitation from within the servers. 
+SQL injection wasn't as easy to find as XSS, but was still present in some of the applications. Out of the 12, three of the sites was/is vulnerable to SQLi. I'd say SQLi could be more severe than XSS as it allows an attacker to dump your entire database, and if suitable, even be able to spawn a shell and perform further exploitation from within the servers. 
 
 ![](/resources/images/dota/SQL1.jpeg)
 
@@ -346,7 +346,7 @@ What did they do wrong? Many areas!
 Like many has said, all you need is one weak spot in order for an adversary to enter your system. Even if I did not manage to enter the server through SSH, I could easily pivoted from the Database servers by spawning a reverse shell or planting a backdoor onto their server.
 
 # Conclusion
-There are many different possible vulnerabilities a website might have, and it takes concious effort in order to discover and patch them. However, common vulnerabilities like those mentioned should have been detected earlier and removed. Hopefully this post will help introduce some concept of security as well as some details that you might not have known before.
+There are many different possible vulnerabilities that might exist on a website and it takes concious effort in order to discover and patch them. However, common vulnerabilities like those mentioned should have been detected earlier and removed. Hopefully this post will help introduce some concept of security as well as some technical details that you might not have known before.
 
 I'd like to iterate that the post is not to shame anyone of the 12 applications and I'd also like to take the chance to thank Dr. Steven Halim for giving me the chance to audit them. :P
 
