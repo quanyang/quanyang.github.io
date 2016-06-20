@@ -62,7 +62,7 @@ The second part of the challenge is meant to be an SQL injection vulnerability. 
 $sql = "SELECT username FROM users WHERE username like '%".str_replace(" ", "", $username)."%';";
 {% endhighlight %}
 
-One way to tell that it was a space filter was to try something like this: `'and(username='johnwick');` versus `' and username='johnwick';--`, should there be a space filter, the second query should not work.
+One way to tell that it was a space filter was to try something like this: `'and(username='johnwick');` versus `' and username='johnwick';`, should there be a space filter, the second query should not work.
 
 To bypass the space filter, you could simply use tabs (%09) or newlines (%0a) instead of spaces. Another way is to use parenthesis, like the following payload: `'union(select(address)from(users));`
 
