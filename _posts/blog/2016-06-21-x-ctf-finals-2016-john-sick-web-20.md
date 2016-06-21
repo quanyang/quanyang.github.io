@@ -14,8 +14,6 @@ date: 2016-06-21T21:51:55+02:00
 
 X-CTF is a capture the flag competition in Singapore organized by NUS Greyhats. The on-site finals took place on Saturday, 18 June 2016. This is another one of the web challenge I wrote for the finals. All of the web challenges I wrote are done with the same front-end UI to make things simpler.
 
-I should have picked better names for the challenges, now they're just confusing :P.
-
 # JohnSick
 >**Points:** 20  
 **Category:** Web  
@@ -23,17 +21,17 @@ I should have picked better names for the challenges, now they're just confusing
 
 ---
 
-For this challenge, the truncation issue in the registration feature has been fixed. So, the first step is to register and login as any user.
+For this challenge, the truncation issue in the registration feature of web 15 has been fixed. So, the first step is to register and login as any user.
 
-The description of the challenge tells you to obtain the source code of index.php, this means that there must be a way to read the source code.
+The description of the challenge tells you to obtain the source code of index.php, this also hints that there must be a way to obtain the source code.
 
 ![](/resources/images/x-ctf/johnsick_upload.png)
 
-After logging in, we see that there's a feature for users to upload images. However, it says clearly that only jpg is allowed and if you tried to upload a jpg file, you'd see that the image will be successfully uploaded and displayed.
+After logging in, we see that there's a feature for users to upload images. However, it says clearly that only jpg is allowed. 
 
 ![](/resources/images/x-ctf/johnsick_uploaded.png){: width="600px"}
 
-However, if you tried any other links, you'd see that the upload would fail and no image would be shown. This was actually due to a filter on the URL.
+If you tried uploading using a URL of a valid JPG image, you'd see that the image would be successfully uploaded and displayed. However, if you tried any links that does not end with `.jpg`, you'd see that the upload would fail and no image would be shown. This was actually due to a filter on the URL.
 
 {% highlight PHP linenos %}
 <?php
