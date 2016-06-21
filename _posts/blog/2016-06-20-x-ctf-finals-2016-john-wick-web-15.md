@@ -15,9 +15,9 @@ date: 2016-06-20T22:48:40+02:00
 X-CTF is a capture the flag competition in Singapore organized by NUS Greyhats. The on-site finals took place on Saturday, 18 June 2016. This is one of the web challenge I wrote for the finals.
 
 # JohnWick
+>**Points:** 20  
 **Category:** Web  
-**Description**
-Login as 'johnwick' and find the flag. [http://bg2.spro.ink:8080](http://bg2.spro.ink:8080)
+**Description:** Login as 'johnwick' and find the flag. [http://bg2.spro.ink:8080](http://bg2.spro.ink:8080)
 
 ---
 
