@@ -12,7 +12,7 @@ comments: true
 date: 2016-06-22T22:32:53+02:00
 ---
 
-X-CTF is a capture the flag competition in Singapore organized by NUS Greyhats. The on-site finals took place on Saturday, 18 June 2016. This is another one of the web challenge I wrote for the finals. All of the web challenges I wrote are done with the same front-end UI to make things simpler.
+X-CTF is a capture the flag competition in Singapore organized by NUS Greyhats. The on-site finals took place on Saturday, 18 June 2016. This is another one of the web challenge I wrote for the finals. 
 
 # JohnSlick
 >**Points:** 25  
@@ -21,11 +21,11 @@ X-CTF is a capture the flag competition in Singapore organized by NUS Greyhats. 
 
 ---
 
-After registration and logging in, there's an upload feature that allows you to upload files to the server. However, there seems to be a check to ensure that only certain file types are allowed, namely, GIF, PNG, JPG and SVG.
+After registering and logging in to an account, there will be an upload feature that allows you to upload files to the server. However, there seems to be a check to ensure that only certain file types are allowed, namely, GIF, PNG, JPG and SVG.
 
 ![](/resources/images/x-ctf/johnslick_upload.png)
 
-If you tried uploading a GIF, PNG or JPG file, you'll find that the image would be successfully uploaded and displayed.
+If you tried uploading a GIF, PNG or JPG file, you'll see that the image would be successfully uploaded and displayed.
 
 ![](/resources/images/x-ctf/johnslick_img.png){: width="400px"}
 

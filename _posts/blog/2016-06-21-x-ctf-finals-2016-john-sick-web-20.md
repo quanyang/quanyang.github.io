@@ -6,13 +6,13 @@ categories: blog
 excerpt: ""
 tags: []
 image:
-feature:
+  feature:
 share: true
 comments: true
 date: 2016-06-21T21:51:55+02:00
 ---
 
-X-CTF is a capture the flag competition in Singapore organized by NUS Greyhats. The on-site finals took place on Saturday, 18 June 2016. This is another one of the web challenge I wrote for the finals. All of the web challenges I wrote are done with the same front-end UI to make things simpler.
+X-CTF is a capture the flag competition in Singapore organized by NUS Greyhats. The on-site finals took place on Saturday, 18 June 2016. This is another one of the web challenge I wrote for the finals. 
 
 # JohnSick
 >**Points:** 20  

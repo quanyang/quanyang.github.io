@@ -9,7 +9,7 @@ Interesting projects I've worked on before. Some dead, some still alive.
 
 --------
 
-#### ![](/resources/projects/griddit.png){: height="auto" width="150px"} | [https://griddit.io](https://Griddit.io) 
+#### ![](/resources/projects/griddit.png){: height="auto" width="150px"} | [https://griddit.io](https://griddit.io) 
 Griddit.io is a platform that allows users to create shareable grids containing many widgets such as Twitter, YouTube, anonymous live chat and embeddable iframes, all in one single web view.  
 
 --------
@@ -21,7 +21,7 @@ Multiplayer Singaporean styled Mahjong. A turn-based table-top tile game modifie
 
 --------
 
-#### ![](/resources/projects/relive.ico)Relive.space | [https://relive.space/](https://relive.space/)
+#### ![](/resources/projects/relive.ico)Relive.space 
 A platform that allows users to relive moments from events. Automatically aggregates data from various social media platforms with a ranking system in-place, providing only quality posts to users.
 
 --------    
