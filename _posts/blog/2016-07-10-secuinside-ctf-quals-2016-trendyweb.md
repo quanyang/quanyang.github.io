@@ -83,7 +83,7 @@ This appears to be a very straightforward challenge. It's a simple service, you'
 
 The first thing that caught my attention was the `wget` call. Just few days ago, a wget [vulnerability](http://legalhackers.com/advisories/Wget-Arbitrary-File-Upload-Vulnerability-Exploit.txt) was publicly disclosed, one that would allow arbitrary files to be downloaded.
 
-Also, we notice that there is an unserialize call at the start of the script using the contents from a file named `pickle`. It is important to also see that there is a small class called `MyClass` that would allow us to invoke arbitrary PHP commands through the `$_GET['cmd']` parameter.
+Also, notice that there is an unserialize call at the start of the script using the contents from a file named `pickle`. It is important to also see that there is a small class called `MyClass` that would allow us to invoke arbitrary PHP commands through the `$_GET['cmd']` parameter.
 
 The attack sequence is now obvious:
 
@@ -96,17 +96,17 @@ What is not obvious here is:
 1. A shutdown function is registered, right before the end of the PHP script execution, the `pickle` file will be overwritten with the value from `serialize($_SESSION)`.
 2. `set_context` is called only at the start of the PHP script execution, that means we won't be able to perform step #3 after step #1 of the attack sequence (assuming a single request).
 
-What we can do instead is to cause a race-condition by doing two requests in parallel. First, make a **POST** request to the service in order to get arbitrary content in `pickle`. The payload for `pickle` is `O:7:"MyClass":0:{}`, which is the serialized form for `MyClass`. Second, when the file is saved onto the remote service and before it is overwritten by the shutdown function, we make a second request that invokes `set_context` which runs our arbitrary PHP code specified throguh `$_GET['cmd']`.
+What could be done instead is to cause a race-condition by doing two requests in parallel. First, make a **POST** request to the service in order to get arbitrary content in `pickle`. The payload for `pickle` is `O:7:"MyClass":0:{}`, which is the serialized form for `MyClass`. Second, when the file is saved onto the remote service and before it is overwritten by the shutdown function, make a second request that invokes `set_context`, which then runs the arbitrary PHP code specified through `$_GET['cmd']`.
 
-It can be tricky to invoke the race-condition, and takes a few attempts. After some attempts, we can get the flag from running the binary at `/flag_is_heeeeeeeereeeeeee`. 
+It can be tricky to invoke the race-condition, and takes a few attempts. After some attempts, the flag can be obtained from running the binary at `/flag_is_heeeeeeeereeeeeee`. 
 
 ### Other ways
-I personally believe the originally intended method by the challenge setter was the above with the race-condition. However, we also found that there are slightly easier ways to get the flag without having to invoke the race-condition. 
+I personally believe the originally intended method by the challenge setter was the above with the race-condition. However, I also found that there are slightly easier ways to get the flag without having to invoke the race-condition. 
 
 #### Method #1
-The folder that the `pickle` file is saved does not seem to have PHP disabled, so we could instead redirect the HTTP request to a FTP URL with a PHP script. With the PHP script, we could browse to remote service hosting the script we just saved to achieve arbitrary code execution.
+The folder that the `pickle` file is saved does not seem to have PHP disabled, so what could be done instead is to redirect the HTTP request to a FTP URL with a PHP script. The PHP script could be a simple `<? passthru($_GET['cmd']) ?>` that allows us to run arbitrary PHP commands.
 
-This is obviously way easier as there is no need to try multiple times using new sessions everytime.
+This would be obviously way less tedious than the above-mentioned method.
 
 #### Method #2
 The check here `if($url['path'] == '/avatar.png')` doesn't take into account for query parameters and so it is possible to specify a URL like `avatar.png%3fcmd.php` which is decoded to `avatar.png?cmd.php`, which is saved as a .php file and executes PHP instructions when browsed.  
