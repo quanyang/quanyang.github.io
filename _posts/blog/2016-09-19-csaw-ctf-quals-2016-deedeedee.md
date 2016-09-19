@@ -40,13 +40,13 @@ I generated it at compile time. :)
 Can you decrypt it for me?
 {% endhighlight %}
 
-The hexencoded flag decodes to `gl`gzt2mql`t2_leu4qr1gsalmhnf_hs^gs8^4^3wesy1n2}`. Keep this in mind, we will need it later.
+The hexencoded flag decodes to ``gl`gzt2mql`t2_leu4qr1gsalmhnf_hs^gs8^4^3wesy1n2}``. Keep this in mind, we will need it later.
 
 ### Analysis
 
 Running `objdump -x` on the binary shows that there are many functions defined, and my first instinct tells me that at least one of these would contain the rountine required to decrypt our flag. 
 
-Doing a simple grep for `encrypt` gives us the function we are searching for:
+Doing a simple grep for `encrypt` finds the function we are searching for:
 
 {% highlight bash linenos %}
 $ objdump -x deedeedee | grep encrypt
