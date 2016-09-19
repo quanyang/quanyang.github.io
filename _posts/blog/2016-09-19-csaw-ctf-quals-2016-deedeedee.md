@@ -31,7 +31,7 @@ deedeedee: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically lin
 libs), for GNU/Linux 2.6.24, BuildID[sha1]=4fac9c863749015d039a3bf0a3a6c936f2f7eadd, not stripped
 {% endhighlight %}
 
-Running the binary in my CTF environment tells us that we have the encrypted the flag, and that the flag was generated at compile time. 
+Running the binary in my CTF environment tells us that we have the encrypted flag, and that the flag was generated at compile time. 
 
 {% highlight bash linenos %}
 $ ./deedeedee
@@ -44,7 +44,7 @@ The hexencoded flag decodes to ``gl`gzt2mql`t2_leu4qr1gsalmhnf_hs^gs8^4^3wesy1n2
 
 ### Analysis
 
-Running `objdump -x` on the binary shows that there are many functions defined, and my first instinct tells me that at least one of these would contain the rountine required to decrypt our flag. 
+Running `objdump -x` on the binary shows that there are many functions defined, and instincts tells me that at least one of these would contain the routine required to decrypt our flag. 
 
 Doing a simple grep for `encrypt` finds the function we are searching for:
 
@@ -194,5 +194,3 @@ RDX: 0x7ffff7ef1c80 ("flag{t3mplat3_met4pr0gramming_is_gr8_4_3very0n3}")
 {% endhighlight %}
 
 And we have our flag!
-
-`flag{t3mplat3_met4pr0gramming_is_gr8_4_3very0n3}`
