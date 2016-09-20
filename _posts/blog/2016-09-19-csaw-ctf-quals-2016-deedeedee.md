@@ -40,7 +40,7 @@ I generated it at compile time. :)
 Can you decrypt it for me?
 {% endhighlight %}
 
-The hexencoded flag decodes to ``gl`gzt2mql`t2_leu4qr1gsalmhnf_hs^gs8^4^3wesy1n2}``. Keep this in mind, we will need it later.
+The hexencoded flag decodes to ``gl`gzt2mql`t2_leu4qr1gsalmhnf_hs^gs8^4^3wesy1n2}``. Keep this in mind, we will need it later. You could use python to decode the hex encoded string or simply use any hex->text converter online.
 
 ### Analysis
 
@@ -52,6 +52,8 @@ Doing a simple grep for `encrypt` finds the function we are searching for:
 $ objdump -x deedeedee | grep encrypt
 000000000044cde0 g     F .text  000000000000158b              _D9deedeedee7encryptFNaNfAyaZAya
 {% endhighlight %}
+
+Note that the names are all mangled, but we can still roughly make out the meaning of the functions.
 
 The disassembly for the function shows some kind of chained function calls where the result of one call is used as argument for the other call.
 
@@ -124,7 +126,7 @@ gdb-peda$ x/xw0x49fa5c
 0x49fa5c <_TMP75>:      0x00313131
 {% endhighlight %}
 
-Now with these, I have some idea of how the encryption is done (probably a chain of xors with some constant byte values). We can further verify this by doing dynamic analysis.
+Now with these, I have some idea of how the encryption is done (probably a chain of xors with some constant byte values, 0x31 in this case). We can further verify this by doing dynamic analysis.
 
 We first set a breakpoint at main, and run the binary in gdb. We then jump to `0x000000000044CDE0`, which is the start of the encrypt function.
 
