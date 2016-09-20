@@ -165,7 +165,19 @@ RDI: 0x7fffffffe2d0 --> 0x3200000031 ('1')
 gdb-peda$
 {% endhighlight %}
 
-We see that the $ebx contains 0x3 which is the length we set at register $rdi as well.
+We see that the $ebx contains 0x3 which is the length we set at register $rdi as well. Thus, in this function, every byte in the input string is xor'ed with 0x31 as well as the length of the input string.
+
+In python, the particular function would look something like the following
+
+{% highlight python linenos %}
+def enc313131(inputStr):
+   length = len(inputStr)
+   result = ""
+   for character in inputStr:
+      result += chr(ord(character) ^ 0x31 ^ length)
+   return result
+{% endhighlight %}
+
 
 Now that we have confirmed our assumptions, the flag can be easily decrypted by running the same function with the flag and the length as input.
 
