@@ -59,7 +59,7 @@ With that, we can then begin to run the tool against all the PHP files in the pl
 
 In order to speed things up, I also make use of multiprocessing in Python to test 4 different plugins at any instance.
 
-Based on initial testing without true verification of exploitability, I saw a total of 712 possible vulnerability within the top 1000 plugins.
+Based on initial testing without true verification of exploitability, it detected a total of **712** possible vulnerability within the top 1000 plugins! However, some of them could be false positives and needs further testing. :)
 
 {% highlight bash linenos %}
 root@ubuntu-512mb-sgp1-01:/wp_research# python consolidate.py
