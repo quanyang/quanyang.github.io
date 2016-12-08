@@ -49,7 +49,7 @@ You could also write a simple script to automatically download WordPress plugins
 drwxr-xr-x   999 quanyang  staff  33966 Nov  9 19:34 downloaded
 {% endhighlight %}
 
-It takes awhile, but all the plugins would eventually be downloaded.
+It takes awhile, but the top 1000 plugins would eventually be downloaded.
 
 #### Continuous Pwning
 
@@ -57,9 +57,9 @@ In the Taint Analysis implementation, it takes in a Taint Policy consisting of S
 
 With that, we can then begin to run the tool against all the PHP files in the plugins downloaded. As the tool is written in Python, we can easily write a Python script to enumerate all PHP files and to run the tool against one-by-one. 
 
-In order to speed things up, I also make use of multiprocessing in Python to test 4 different plugins at any instance.
+In order to speed things up, I also make use of multiprocessing in Python to test 4 different plugins at any instant.
 
-Based on initial testing without true verification of exploitability, it detected a total of **712** possible vulnerability within the top 1000 plugins! However, some of them could be false positives and needs further testing. :)
+Based on initial testing without true verification of exploitability, it detected a total of **712** possible vulnerability within the top 1000 plugins! However, some of them could be false positives and needs further testing to verify. 
 
 {% highlight bash linenos %}
 root@ubuntu-512mb-sgp1-01:/wp_research# python consolidate.py
