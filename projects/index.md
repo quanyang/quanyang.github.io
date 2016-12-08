@@ -9,6 +9,11 @@ Interesting projects I've worked on before. Some dead, some still alive.
 
 --------
 
+#### PHP Taint Analysis + Symbolic Execution | [http://taint.spro.ink](http://taint.spro.ink)
+This is a taint analysis tool for the PHP language, it makes use of Static Taint Analysis and Symbolic Execution to achieve an analysis with high recall and improved precision.
+
+--------
+
 #### ![](/resources/projects/griddit.png){: height="auto" width="150px"} | [https://griddit.io](https://griddit.io) 
 Griddit.io is a platform that allows users to create shareable grids containing many widgets such as Twitter, YouTube, anonymous live chat and embeddable iframes, all in one single web view.  
 
