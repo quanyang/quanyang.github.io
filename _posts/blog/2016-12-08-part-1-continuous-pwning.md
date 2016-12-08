@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Part 1 - Continuous Pwning of Top 1000 WordPress Plugins
+title: Part 1 - Continuous Pwning of the Top 1000 WordPress Plugins
 modified:
 categories: blog
 excerpt: ""
@@ -12,7 +12,7 @@ comments: true
 date: 2016-12-08T18:56:24+08:00
 ---
 
-This article is the first part of how I make use of a tool I wrote to automatically detect vulnerabilities in the top 1000 WordPress plugins.
+This article is the first part of many on a Taint Analysis Tool I wrote for the PHP Programming Language. This part talks about how I make use of the tool to automatically look for vulnerabilities in the top 1000 WordPress Plugin!
 
 #### Introduction
 
@@ -135,7 +135,11 @@ In fact, the vulnerabilty was found by the tool automatically. We can see an int
 
 From [https://pluginu.com/nelio-ab-testing/](https://pluginu.com/nelio-ab-testing/), we can easily see that there are at least 173 websites using this plugin currently! Being lucky, I was able to find a bug bounty program that has a WordPress site using this particular plugin and was able to obtain a bounty with this finding. :)
 
-**I've since reported this to the author and was told it has been fixed!**
+![](/resources/images/continuouspwning/bug.png)
+
+![](/resources/images/continuouspwning/bounty.png)
+
+**I've since reported this to the plugin author and was told it has been fixed!**
 
 #### Conclusion
 
