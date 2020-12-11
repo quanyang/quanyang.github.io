@@ -140,7 +140,7 @@ Secondly, the message data is then injected using `innerHTML` which would render
 
 ### Hypothesis
 
-I was stuck on this challenge for a bit as it wasn't immediately obvious where the flag is contained or what the next steps are, however, if we take a step back to look at what we have, we can hypothesis a few scenarios where the flag could be located.
+I was stumped for a bit as it wasn't immediately obvious where the flag is located or what the next steps were, however, if we take a step back to analyze at what we have, we can hypothesis where the flag could be located.
 
 1. In feature #1, the HTTP request is made with a headless chrome, this could imply that certain interaction with the browser might be needed (running JavaScript, service workers, etc).
 2. The iframe in feature #2 allows iframing from a different origin, and the insufficient origin check seems to imply that we have to do that. On top of that, the XSS issue further implies that we might need to exploit it in order to get the flag (flag in cookie or some storage accessible from JavaScript).
@@ -181,7 +181,7 @@ Looking back at the iFrame JavaScript, I realized that instead of posting a stri
 Example:
 If `msg` was an Array object `['mypayload']`, `!msg.includes("|")` will be checking that there exists the `"|"` element in the Array, however, that doesn't exist in my payload, and would allow me to bypass the check entirely.
 
-Finally, I can craft the final exploit payload:
+Finally, I can craft  final exploit payload:
 
 {% highlight html linenos %}
 <html>
@@ -208,5 +208,11 @@ Which exfiltrates available cookies using an image tag to an attacker-controlled
 
 And we have the flag: `govtech-csg{V3Ni,v1dI,v!Cl}`
 
+### Recap
 
+In order to obtain the flag, we had to perform the following bypasses:
 
+1. Origin check bypass
+2. CSP bypass using Angular JS
+3. Bypass blacklist of characters
+4. HTML injection resulting in JavaScript execution
