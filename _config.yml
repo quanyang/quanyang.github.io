@@ -4,8 +4,9 @@ title: Quan Yang
 locale: en_US
 description: Quan Yang's blog.
 search: true
-url: https://quanyang.github.io
 url: http://127.0.0.1:4000
+url: https://quanyang.github.io
+
 
 # Jekyll configuration
 
