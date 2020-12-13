@@ -1,6 +1,6 @@
 ---
 layout: post
-title: STACK 2020 - Ransom Me This
+title: STACK the flags 2020 CTF - Ransom Me This
 modified:
 categories: blog/
 excerpt:

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: STACK 2020 - Final Countdown
+title: STACK the flags 2020 CTF - Final Countdown
 modified:
 categories: blog/
-excerpt:
+excerpt: "Prototype pollution leading to remote code execution"
 tags: []
 image:
   feature:

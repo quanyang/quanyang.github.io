@@ -1,6 +1,6 @@
 ---
 layout: post
-title: STACK 2020 - You Shall Not Pass
+title: STACK the flags 2020 CTF - You Shall Not Pass
 modified:
 categories: blog/
 excerpt:
